@@ -1,0 +1,225 @@
+/* public/css/app.css */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+/* Color Palette & General Styles */
+:root {
+    --primary-color: #6a4c28; /* Cokelat keemasan */
+    --secondary-color: #a48259; /* Cokelat muda untuk aksen */
+    --text-color: #333; /* Abu-abu gelap untuk teks */
+    --light-text-color: #fff; /* Teks putih */
+    --background-color: #f7f3ed; /* Latar belakang krem */
+    --button-hover-color: #8c6a3f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navigation */
+.header {
+    background: linear-gradient(to bottom, rgba(239, 255, 255, 0.9), rgba(255, 255, 255, 0.0));
+    backdrop-filter: blur(3px); 
+    -webkit-backdrop-filter: blur(8px); 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1rem 0; 
+    box-shadow: none;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links-container a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links-container a:hover {
+    color: var(--primary-color);
+}
+
+.book-now-btn {
+    background: var(--primary-color);
+    color: var(--light-text-color) !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+    background: var(--button-hover-color);
+}
+
+/* Responsive Menu Button */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo {
+        margin-bottom: 1rem;
+    }
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: var(--primary-color);
+        cursor: pointer;
+        align-self: flex-end;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+    .nav-links-container {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--light-text-color);
+        padding: 1rem;
+        border-top: 1px solid #eee;
+    }
+    .nav-links-container a {
+        padding: 1rem 0;
+        border-top: 1px solid #eee;
+    }
+    .nav-links-container.active {
+        display: flex;
+    }
+}
+
+/* Styling untuk ikon WhatsApp di navbar */
+.whatsapp-icon {
+    font-size: 1.5rem; 
+    color: #25D366 !important; 
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1); 
+}
+
+/* Styling untuk tautan navigasi yang sedang aktif */
+.nav-links-container a.active {
+    color: #d7c353 !important; 
+    position: relative;
+    font-weight: bold;
+}
+
+.nav-links-container a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffd700; 
+}
+
+/* General Section Styles */
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Styling Tautan Sosial di Footer */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px; 
+    margin-top: 20px;
+}
+
+.social-links .social-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--light-text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.social-links .social-link:hover {
+    transform: translateY(-5px); 
+}
+
+/* Warna Ikon Sosial */
+.social-links .instagram-link i {
+    color: #e4405f; 
+    font-size: 1.25rem;
+    margin-right: 8px;
+}
+
+.social-links .whatsapp-link i {
+    color: #25d366; 
+    font-size: 1.25rem;
+    margin-right: 8px;
+}

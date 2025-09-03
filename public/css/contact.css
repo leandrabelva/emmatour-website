@@ -1,0 +1,82 @@
+/* public/css/contact.css */
+
+/* Styling untuk halaman kontak */
+.page-hero {
+    padding-top: 150px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding-bottom: 50px;
+}
+.page-hero h1 {
+    font-size: 3rem;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 3rem;
+    padding: 3rem 0;
+    padding-left: 30px;
+}
+
+.contact-info {
+    flex: 1; 
+    min-width: 300px; 
+}
+
+.contact-info .contact-content h3 {
+    display: flex; 
+    align-items: center;
+    color: var(--dark-text-color);
+    margin-top: 1.5rem;
+}
+
+.contact-info .contact-content p {
+    color: #555;
+    margin-left: 1.5rem; 
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.google-maps {
+    flex: 2; 
+    min-width: 400px;
+}
+
+.google-maps h3 {
+    color: var(--dark-text-color);
+    margin-bottom: 1rem;
+}
+
+.map-container {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+/* Animasi */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Penyesuaian responsif */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-info, .google-maps {
+        min-width: unset;
+        width: 100%;
+    }
+}

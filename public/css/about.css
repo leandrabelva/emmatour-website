@@ -1,0 +1,159 @@
+/* public/css/about.css */
+
+/* Page Hero Section */
+.page-hero {
+    padding-top: 150px;
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding-bottom: 50px;
+}
+.page-hero h1 {
+    font-size: 3rem;
+}
+
+/* About Sections Styling */
+.about-section {
+    background-color: #f4e3ce; 
+    color: #f7f3ed; 
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+.about-section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+.about-card-tentang {
+    background-color: #533b1e; 
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+}
+.about-card {
+    background-color: #533b1e; 
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+.about-card h2 {
+    color: #ffd700; 
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: left; 
+}
+.about-card p, .about-card li {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #e0e0e0; 
+}
+
+/* Tentang Perusahaan Specific Styles */
+.about-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.about-header .about-logo {
+    height: 80px; 
+    margin-right: 1.5rem;
+}
+.about-header h2 {
+    margin: 0;
+}
+.about-images {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.about-img-small, .about-img-large {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.about-img-small {
+    height: 200px; 
+}
+.about-img-large {
+    height: 350px; 
+}
+
+/* Visi & Misi Specific Styles */
+.visi-misi h2 {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    color: #ffd700;
+}
+.visi-misi h2:first-of-type {
+    margin-top: 0; 
+}
+.visi-misi ol {
+    list-style: decimal;
+    margin-left: 1.5rem;
+    padding-left: 0;
+}
+.visi-misi li {
+    margin-bottom: 0.8rem;
+}
+
+/* Nilai-Nilai Specific Styles */
+.nilai-nilai .value-item {
+    background-color: #3a2814; 
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+.nilai-nilai .value-item h3 {
+    color: #ffd700; 
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+.nilai-nilai .value-item p {
+    margin-bottom: 0;
+}
+
+/* Animasi */ 
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out; 
+}
+.fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-card {
+        padding: 1.5rem;
+    }
+    .about-card h2 {
+        font-size: 1.8rem;
+    }
+    .about-images {
+        grid-template-columns: 1fr; 
+    }
+    .about-img-small, .about-img-large {
+        height: 250px; 
+    }
+    .about-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .about-header .about-logo {
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+}

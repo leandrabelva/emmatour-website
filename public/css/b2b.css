@@ -1,0 +1,65 @@
+/* Styling Halaman B&B */
+.b2b-section {
+    padding-top: 150px;
+    padding-bottom: 60px;
+    text-align: center;
+    background-color: var(--background-color);
+}
+
+.b2b-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.b2b-description {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+/* Styling Halaman B&B */
+/* ... (kode CSS yang sudah ada di atas) ... */
+
+.b2b-poster-container a {
+    display: block;
+    cursor: zoom-in;
+}
+
+.b2b-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol "Order Now" dengan warna yang berbeda */
+.b2b-order-btn {
+    display: inline-block;
+    background-color: #D4AF37; /* Warna emas/gold yang berbeda */
+    color: var(--text-color);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.b2b-order-btn:hover {
+    background-color: var(--primary-color); /* Kembali ke warna utama saat di-hover */
+    color: var(--light-text-color);
+    transform: translateY(-3px);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .b2b-title {
+        font-size: 2rem;
+    }
+    .b2b-description {
+        font-size: 1rem;
+    }
+}

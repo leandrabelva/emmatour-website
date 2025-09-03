@@ -1,0 +1,264 @@
+/* public/css/admin.css */
+
+:root {
+    --primary-color: #6a4c28;
+    --secondary-color: #a48259;
+    --background-color: #f4f4f4;
+    --light-text-color: #ecf0f1;
+    --dark-text-color: #333;
+    --button-hover-color: #8c6a3f;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text-color);
+}
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 2rem;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: width 0.3s ease, left 0.3s ease; /* Tambahkan transisi 'left' */
+    z-index: 1000; /* Pastikan di atas konten lain */
+}
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    margin-bottom: 1rem;
+}
+.sidebar ul li a {
+    display: block;
+    padding: 1rem;
+    color: var(--light-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.sidebar ul li a:hover {
+    background-color: var(--button-hover-color);
+}
+.sidebar i {
+    margin-right: 10px;
+}
+.main-content {
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+}
+.header-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+.logout-form {
+    display: inline;
+}
+.logout-form button {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+/* Tambahkan tombol menu hamburger */
+.menu-toggle {
+    display: none; /* Sembunyikan secara default di desktop */
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- Gaya untuk Tabel Paket --- */
+.table-responsive {
+    overflow-x: auto;
+}
+.content-area table {
+    width: 100%;
+    min-width: 600px; /* Lebar minimum untuk tabel agar tidak terlalu sempit */
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.content-area th, .content-area td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.content-area th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+.content-area tr:hover {
+    background-color: #f1f1f1;
+}
+.content-area td img {
+    border-radius: 4px;
+}
+
+/* --- Gaya untuk Formulir --- */
+.form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* --- Gaya untuk Tombol-tombol --- */
+.btn-add-new {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+.btn-add-new:hover {
+    background-color: #218838;
+}
+.btn-submit {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-submit:hover {
+    background-color: #218838;
+}
+.btn-edit, .btn-delete {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+.btn-edit {
+    background-color: #ffc107;
+    color: #333;
+}
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+.btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* --- Gaya untuk Notifikasi --- */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+/* --- Media Queries untuk Responsivitas --- */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column; /* Tumpuk konten di layar kecil */
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+        display: none; /* Sembunyikan sidebar secara default */
+    }
+    .sidebar.active {
+        display: block; /* Tampilkan saat aktif */
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    .header-admin {
+        padding: 1rem;
+    }
+    .header-admin .logout-form button {
+        color: #fff; /* Ubah warna teks logout di header */
+    }
+    .menu-toggle {
+        display: block; /* Tampilkan tombol toggle */
+    }
+    /* Sembunyikan sidebar di desktop, perlihatkan di mobile */
+    .sidebar {
+        width: 250px; /* Tetap lebar aslinya */
+        left: -250px; /* Sembunyikan di luar layar */
+    }
+    .sidebar.active {
+        left: 0; /* Geser ke dalam layar saat aktif */
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .table-responsive {
+        width: 100%;
+    }
+    .content-area table {
+        display: block; /* Gunakan display block untuk scroll */
+        width: 100%;
+    }
+    .content-area th, .content-area td {
+        white-space: nowrap; /* Cegah teks memotong */
+    }
+}
