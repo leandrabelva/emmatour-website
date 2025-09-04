@@ -210,3 +210,15 @@
 .package-card p .fa-plane {
     color: #007bff; 
 }
+
+@media (max-width: 768px) {
+    .features-grid {
+       
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .feature-item {
+        max-width: 100%;
+    }
+}
